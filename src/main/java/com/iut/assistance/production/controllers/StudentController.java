@@ -28,5 +28,4 @@ public class StudentController {
         service.createStudent(userDto);
         return ResponseEntity.ok(new ApiGenericResponse("Veuillez activer", HttpStatus.OK, ZonedDateTime.now()));
     }
-
 }

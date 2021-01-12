@@ -10,16 +10,28 @@ public class AssistanceSheetDto {
     private String  teacherName;
     private Date    startDate;
     private Integer semestre;
+    private Long    idGroup;
     private String  groupName;
+    private Long    idModule;
+    private String  module;
     private List<StudentAssistance> students;
 
-    public AssistanceSheetDto(Long assistanceSheetId, String assistanceSheetStatus, String teacherName, Date startDate, Integer semestre, String groupName, List<StudentAssistance> students) {
+    public AssistanceSheetDto(Long assistanceSheetId, String assistanceSheetStatus,
+                              String teacherName, Date startDate,
+                              Integer semestre,
+                              Long idGroup,
+                              String groupName,
+                              Long idModule, String module,
+                              List<StudentAssistance> students) {
         this.assistanceSheetId = assistanceSheetId;
         this.assistanceSheetStatus = assistanceSheetStatus;
         this.teacherName = teacherName;
         this.startDate = startDate;
         this.semestre = semestre;
+        this.idGroup = idGroup;
         this.groupName = groupName;
+        this.idModule = idModule;
+        this.module = module;
         this.students = students;
     }
 
@@ -77,5 +89,29 @@ public class AssistanceSheetDto {
 
     public void setStudents(List<StudentAssistance> students) {
         this.students = students;
+    }
+
+    public Long getIdModule() {
+        return idModule;
+    }
+
+    public void setIdModule(Long idModule) {
+        this.idModule = idModule;
+    }
+
+    public String getModule() {
+        return module;
+    }
+
+    public void setModule(String module) {
+        this.module = module;
+    }
+
+    public Long getIdGroup() {
+        return idGroup;
+    }
+
+    public void setIdGroup(Long idGroup) {
+        this.idGroup = idGroup;
     }
 }

@@ -1,8 +1,15 @@
 package com.iut.assistance.production.models.repositories;
 
+import com.iut.assistance.production.models.entities.AssistanceSheet;
 import com.iut.assistance.production.models.entities.StudentSheetAssistance;
 import org.springframework.data.repository.CrudRepository;
 
-public interface StudentSheetAssistanceRepository extends CrudRepository<StudentSheetAssistance, Long>{
+import java.util.List;
+
+public interface StudentSheetAssistanceRepository extends CrudRepository<StudentSheetAssistance, Long> {
+
+    List<StudentSheetAssistance> findByAssistanceSheet(AssistanceSheet assistanceSheet);
+
+
 
 }

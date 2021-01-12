@@ -8,4 +8,5 @@ public interface StudentService {
     Student save(Student student);
 
     Student findByUser(User user);
+
 }

@@ -23,6 +23,7 @@ public class StudentSheetAssistance {
 
     @ManyToOne @JoinColumn(name = "student_id")
     private Student student;
+    //End relations
 
     public Long getId() {
         return id;

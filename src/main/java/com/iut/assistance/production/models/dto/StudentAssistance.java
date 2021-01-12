@@ -4,18 +4,20 @@ import java.util.Date;
 
 public class StudentAssistance {
 
-    private Long id;
+    private Long   id;
     private String firstName;
     private String lastName;
     private String identifierNumber;
-    private Date date;
+    private Date   date;
+    private String status;
 
-    public StudentAssistance(Long id, String firstName, String lastName, String identifierNumber, Date date) {
+    public StudentAssistance(Long id, String firstName, String lastName, String identifierNumber, Date date, String status) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.identifierNumber = identifierNumber;
         this.date = date;
+        this.status = status;
     }
 
     public Long getId() {
@@ -36,5 +38,9 @@ public class StudentAssistance {
 
     public Date getDate() {
         return date;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

@@ -18,6 +18,7 @@ public class AssistanceSheet {
     private Date endDate;
 
     //RELATIONS
+
     @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
@@ -36,6 +37,8 @@ public class AssistanceSheet {
 
     @OneToMany(mappedBy = "assistanceSheet", fetch = FetchType.EAGER)
     private List<StudentSheetAssistance> studentSheetAssistances;
+
+//    End relations
 
     public AssistanceSheet() {
     }

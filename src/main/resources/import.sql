@@ -16,6 +16,11 @@ INSERT INTO users (email, identifier_number, last_name, name, password, user_sta
 INSERT INTO user_privileges (user_id, privilege_id) VALUES (1,2);
 INSERT INTO students(user_id) VALUES (3);
 
+INSERT INTO users (email, identifier_number, last_name, name, password, user_status_id) VALUES ("student3@gmail.com","123","ATTAQUE","Louis","$2y$12$uxX33Gc3zdvN5eEUhTksju1PsDU9pegKXKv3N6wQxiC3ES1nrz3NO",1);
+INSERT INTO user_privileges (user_id, privilege_id) VALUES (1,2);
+INSERT INTO students(user_id) VALUES (4);
+
+
 # FORMATIONS
 INSERT INTO formations(acronyme,code_specialite,type_parcours,titre_officiel,formation_code,version,titre,id) VALUES ("DUT INFO","",100,"DUT Informatique","FCOD1",5,"DUT Informatique (PPN 2013)","FORM14923");
 INSERT INTO formations(acronyme,code_specialite,type_parcours,titre_officiel,formation_code,version,titre,id) VALUES ("LP MobiNum","",200,"LP Métiers de l'informatique : applications web","FCOD14",1,"LP Mobilité numérique","FORM10035");

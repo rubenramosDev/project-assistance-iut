@@ -17,4 +17,10 @@ public class GroupServiceImpl implements GroupService {
     public Group findById(Long id) {
         return repository.findById(id).orElse(null);
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Group findByName(String name){
+        return repository.findByName(name);
+    }
 }

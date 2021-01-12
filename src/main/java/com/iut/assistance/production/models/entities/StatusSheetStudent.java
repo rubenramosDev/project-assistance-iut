@@ -16,7 +16,6 @@ public class StatusSheetStudent {
     @OneToMany(mappedBy = "statusSheetStudent")
     private List<StudentSheetAssistance> studentSheetAssistances;
 
-
     public Long getId() {
         return id;
     }
