@@ -136,5 +136,15 @@ INSERT INTO unites_enseignements(acronyme,is_external,code_apogee,ects,ue_code,n
 INSERT INTO matiers(numero,titre,unite_enseignement_id) VALUES (1,"Stage",25);
 INSERT INTO modules(coefficient,code,semestre_id,code_apogee,ects,heures_tp,abbrev,numero,heures_cours,module_type,titre,heures_td,matiere_id) VALUES (9,"Stage",1,"","",0,"Stage",10,0,0,"Stage",0,25);
 
-# TPPROW - Semestre 1
+INSERT INTO groups(name, semestre_id) VALUES ('S1',1),('S1A',1),('S1B',1),('S1A1',1),('S1A2',1),('S1B1',1),('S1B2',1);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',2),('S1A',2),('S1B',2),('S1A1',2),('S1A2',2),('S1B1',2),('S1B2',2);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',3),('S1A',3),('S1B',3),('S1A1',3),('S1A2',3),('S1B1',3),('S1B2',3);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',4),('S1A',4),('S1B',4),('S1A1',4),('S1A2',4),('S1B1',4),('S1B2',4);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',5),('S1A',5),('S1B',5),('S1A1',5),('S1A2',5),('S1B1',5),('S1B2',5);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',6),('S1A',6),('S1B',6),('S1A1',6),('S1A2',6),('S1B1',6),('S1B2',6);
 INSERT INTO groups(name, semestre_id) VALUES ('S1',7),('S1A',7),('S1B',7),('S1A1',7),('S1A2',7),('S1B1',7),('S1B2',7);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',8),('S1A',8),('S1B',8),('S1A1',8),('S1A2',8),('S1B1',8),('S1B2',8);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',9),('S1A',9),('S1B',9),('S1A1',9),('S1A2',9),('S1B1',9),('S1B2',9);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',10),('S1A',10),('S1B',10),('S1A1',10),('S1A2',10),('S1B1',10),('S1B2',10);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',11),('S1A',11),('S1B',11),('S1A1',11),('S1A2',11),('S1B1',11),('S1B2',11);
+INSERT INTO groups(name, semestre_id) VALUES ('S1',12),('S1A',12),('S1B',12),('S1A1',12),('S1A2',12),('S1B1',12),('S1B2',12);
