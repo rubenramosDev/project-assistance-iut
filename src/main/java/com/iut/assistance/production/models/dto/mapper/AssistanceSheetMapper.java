@@ -35,7 +35,7 @@ public class AssistanceSheetMapper {
                 sheet.getGroup().getId(),
                 sheet.getGroup().getName(),
                 sheet.getModule().getId(),
-                sheet.getModule().getTitre(), null);
+                sheet.getModule().getAbbrev(), null);
     }
 
 }
