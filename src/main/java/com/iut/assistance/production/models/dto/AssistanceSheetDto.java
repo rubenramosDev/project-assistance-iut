@@ -9,6 +9,7 @@ public class AssistanceSheetDto {
     private String  assistanceSheetStatus;
     private String  teacherName;
     private Date    startDate;
+    private Long    idSemestre;
     private Integer semestre;
     private Long    idGroup;
     private String  groupName;
@@ -16,17 +17,12 @@ public class AssistanceSheetDto {
     private String  module;
     private List<StudentAssistance> students;
 
-    public AssistanceSheetDto(Long assistanceSheetId, String assistanceSheetStatus,
-                              String teacherName, Date startDate,
-                              Integer semestre,
-                              Long idGroup,
-                              String groupName,
-                              Long idModule, String module,
-                              List<StudentAssistance> students) {
+    public AssistanceSheetDto(Long assistanceSheetId, String assistanceSheetStatus, String teacherName, Date startDate, Long idSemestre, Integer semestre, Long idGroup, String groupName, Long idModule, String module, List<StudentAssistance> students) {
         this.assistanceSheetId = assistanceSheetId;
         this.assistanceSheetStatus = assistanceSheetStatus;
         this.teacherName = teacherName;
         this.startDate = startDate;
+        this.idSemestre = idSemestre;
         this.semestre = semestre;
         this.idGroup = idGroup;
         this.groupName = groupName;
@@ -113,5 +109,13 @@ public class AssistanceSheetDto {
 
     public void setIdGroup(Long idGroup) {
         this.idGroup = idGroup;
+    }
+
+    public Long getIdSemestre() {
+        return idSemestre;
+    }
+
+    public void setIdSemestre(Long idSemestre) {
+        this.idSemestre = idSemestre;
     }
 }

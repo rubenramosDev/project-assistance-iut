@@ -2,9 +2,9 @@ package com.iut.assistance.production.models.dto;
 
 public class GroupFormationDto {
 
-    private Long    moduleId;
-    private Integer semestreId;
-    private Long  groupId;
+    private Long     moduleId;
+    private Integer  semestreId;
+    private Long     groupId;
 
     public Long getModuleId() {
         return moduleId;

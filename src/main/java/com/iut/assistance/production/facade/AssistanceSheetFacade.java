@@ -52,8 +52,9 @@ public class AssistanceSheetFacade {
     public AssistanceSheetDto createAssistanceSheet(GroupFormationDto sheetDto) {
         AuthenticationUser user = (AuthenticationUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Teacher teacher = teacherService.findByUser(userService.findByEmail(user.getUsername()));
+
         Module module = moduleService.findById(sheetDto.getModuleId());
-        Group group = groupService.findById(sheetDto.getGroupId());
+        Group group   = groupService.findById(sheetDto.getGroupId());
 
         AssistanceSheet assistanceSheet = new AssistanceSheet(new Date(), teacher, group, statusSheetService.findByCode("ACTIVE"), module);
         return mapper.assitanceSheetToDto(assistanceSheetService.saveAssistanceSheet(assistanceSheet));
