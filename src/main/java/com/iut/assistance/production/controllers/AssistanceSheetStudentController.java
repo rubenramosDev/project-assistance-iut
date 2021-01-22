@@ -20,7 +20,7 @@ public class AssistanceSheetStudentController {
 
     @ApiOperation(value = "Student takes assistance in Assistance Sheet",
             notes = "No role required",
-            response = AssistanceSheetDto.class)
+            response = String.class)
     @PostMapping("/assistance")
     public ResponseEntity registerStudentAssistanceSheet(@Valid @RequestBody StudentAssistanceSheet studentAssistanceSheet){
         facade.registerStudentAssistance(studentAssistanceSheet);

@@ -37,5 +37,4 @@ public class AssistanceSheetMapper {
                 sheet.getModule().getId(),
                 sheet.getModule().getAbbrev(), null);
     }
-
 }

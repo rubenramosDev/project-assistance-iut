@@ -1,16 +1,14 @@
 package com.iut.assistance.production.models.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "formations")
+
+@Entity //We identify this model as an persistence object
+@Table(name = "formations") // We modify table's name
 public class Formation {
 
-    @Id
+    @Id // Indicate that this attribute is going to be ours primary key (ID)
     private String id;
     private String acronyme;
     private String codeSpecialite;
@@ -26,6 +24,8 @@ public class Formation {
 
     @OneToMany(mappedBy = "formation")
     private List<Semestre> semestres;
+
+//    END RELATIONS
 
     public String getId() {
         return id;

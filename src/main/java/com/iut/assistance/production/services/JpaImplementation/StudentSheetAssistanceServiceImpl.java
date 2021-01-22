@@ -1,6 +1,7 @@
 package com.iut.assistance.production.services.JpaImplementation;
 
 import com.iut.assistance.production.models.entities.AssistanceSheet;
+import com.iut.assistance.production.models.entities.Student;
 import com.iut.assistance.production.models.entities.StudentSheetAssistance;
 import com.iut.assistance.production.models.repositories.StudentSheetAssistanceRepository;
 import com.iut.assistance.production.services.StudentSheetAssistanceService;
@@ -15,7 +16,6 @@ public class StudentSheetAssistanceServiceImpl implements StudentSheetAssistance
 
     @Autowired private StudentSheetAssistanceRepository repository;
 
-
     @Transactional(readOnly = true)
     @Override
     public StudentSheetAssistance findById(Long id){
@@ -26,6 +26,12 @@ public class StudentSheetAssistanceServiceImpl implements StudentSheetAssistance
     @Override
     public List<StudentSheetAssistance> findByAssistanceSheet(AssistanceSheet assistanceSheet){
         return repository.findByAssistanceSheet(assistanceSheet);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<StudentSheetAssistance> findByStudent(Student student){
+        return repository.findByStudent(student);
     }
 
     @Transactional

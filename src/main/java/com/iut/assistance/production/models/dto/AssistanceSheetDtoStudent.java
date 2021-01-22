@@ -1,44 +1,35 @@
 package com.iut.assistance.production.models.dto;
 
 import java.util.Date;
-import java.util.List;
 
-public class AssistanceSheetDto {
+public class AssistanceSheetDtoStudent {
 
     private Long    assistanceSheetId;
     private String  assistanceSheetStatus;
     private String  teacherName;
-    private Date    startDate;
+    private Date    date;
     private Long    idSemestre;
     private Integer semestre;
     private Long    idGroup;
     private String  groupName;
     private Long    idModule;
     private String  module;
-    private List<StudentAssistance> students;
+    private Date myAttendanceTime;
+    private String statusOfMyAssistance;
 
-    public AssistanceSheetDto(Long assistanceSheetId,
-                              String assistanceSheetStatus,
-                              String teacherName,
-                              Date startDate,
-                              Long idSemestre,
-                              Integer semestre,
-                              Long idGroup,
-                              String groupName,
-                              Long idModule,
-                              String module,
-                              List<StudentAssistance> students) {
+    public AssistanceSheetDtoStudent(Long assistanceSheetId, String assistanceSheetStatus, String teacherName, Date date, Long idSemestre, Integer semestre, Long idGroup, String groupName, Long idModule, String module, Date myAttendanceTime, String statusOfMyAssistance) {
         this.assistanceSheetId = assistanceSheetId;
         this.assistanceSheetStatus = assistanceSheetStatus;
         this.teacherName = teacherName;
-        this.startDate = startDate;
+        this.date = date;
         this.idSemestre = idSemestre;
         this.semestre = semestre;
         this.idGroup = idGroup;
         this.groupName = groupName;
         this.idModule = idModule;
         this.module = module;
-        this.students = students;
+        this.myAttendanceTime = myAttendanceTime;
+        this.statusOfMyAssistance = statusOfMyAssistance;
     }
 
     public Long getAssistanceSheetId() {
@@ -65,12 +56,20 @@ public class AssistanceSheetDto {
         this.teacherName = teacherName;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getDate() {
+        return date;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Long getIdSemestre() {
+        return idSemestre;
+    }
+
+    public void setIdSemestre(Long idSemestre) {
+        this.idSemestre = idSemestre;
     }
 
     public Integer getSemestre() {
@@ -81,20 +80,20 @@ public class AssistanceSheetDto {
         this.semestre = semestre;
     }
 
+    public Long getIdGroup() {
+        return idGroup;
+    }
+
+    public void setIdGroup(Long idGroup) {
+        this.idGroup = idGroup;
+    }
+
     public String getGroupName() {
         return groupName;
     }
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
-    }
-
-    public List<StudentAssistance> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<StudentAssistance> students) {
-        this.students = students;
     }
 
     public Long getIdModule() {
@@ -113,19 +112,19 @@ public class AssistanceSheetDto {
         this.module = module;
     }
 
-    public Long getIdGroup() {
-        return idGroup;
+    public Date getMyAttendanceTime() {
+        return myAttendanceTime;
     }
 
-    public void setIdGroup(Long idGroup) {
-        this.idGroup = idGroup;
+    public void setMyAttendanceTime(Date myAttendanceTime) {
+        this.myAttendanceTime = myAttendanceTime;
     }
 
-    public Long getIdSemestre() {
-        return idSemestre;
+    public String getStatusOfMyAssistance() {
+        return statusOfMyAssistance;
     }
 
-    public void setIdSemestre(Long idSemestre) {
-        this.idSemestre = idSemestre;
+    public void setStatusOfMyAssistance(String statusOfMyAssistance) {
+        this.statusOfMyAssistance = statusOfMyAssistance;
     }
 }

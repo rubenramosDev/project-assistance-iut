@@ -1,4 +1,3 @@
-# Active = 1 / Inactive = 2
 INSERT INTO status_users(code) VALUES (1),(2);
 INSERT INTO privileges(name) VALUES ("ROL_TEACHER"),("ROL_STUDENT");
 INSERT INTO status_sheets(code) VALUES ("ACTIVE"),("FINISHED");
@@ -9,15 +8,15 @@ INSERT INTO user_privileges (user_id, privilege_id) VALUES (1,1),(1,2);
 INSERT INTO teachers(user_id) VALUES (1);
 
 INSERT INTO users (email, identifier_number, last_name, name, password, user_status_id) VALUES ("student@gmail.com","7070","RAMOS","Ruben","$2y$12$RXBmJ1wHBSkvY9WRsCCEOexKkuYJuA4ZthCybjq8XP.casTBVa64i",1);
-INSERT INTO user_privileges (user_id, privilege_id) VALUES (1,2);
+INSERT INTO user_privileges (user_id, privilege_id) VALUES (2,2);
 INSERT INTO students(user_id) VALUES (2);
 
 INSERT INTO users (email, identifier_number, last_name, name, password, user_status_id) VALUES ("student2@gmail.com","70707","SANTOS","Edson","$2y$12$uxX33Gc3zdvN5eEUhTksju1PsDU9pegKXKv3N6wQxiC3ES1nrz3NO",1);
-INSERT INTO user_privileges (user_id, privilege_id) VALUES (1,2);
+INSERT INTO user_privileges (user_id, privilege_id) VALUES (3,2);
 INSERT INTO students(user_id) VALUES (3);
 
 INSERT INTO users (email, identifier_number, last_name, name, password, user_status_id) VALUES ("student3@gmail.com","123","ATTAQUE","Louis","$2y$12$uxX33Gc3zdvN5eEUhTksju1PsDU9pegKXKv3N6wQxiC3ES1nrz3NO",1);
-INSERT INTO user_privileges (user_id, privilege_id) VALUES (1,2);
+INSERT INTO user_privileges (user_id, privilege_id) VALUES (4,2);
 INSERT INTO students(user_id) VALUES (4);
 
 

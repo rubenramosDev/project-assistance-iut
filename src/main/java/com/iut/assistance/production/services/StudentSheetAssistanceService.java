@@ -1,6 +1,7 @@
 package com.iut.assistance.production.services;
 
 import com.iut.assistance.production.models.entities.AssistanceSheet;
+import com.iut.assistance.production.models.entities.Student;
 import com.iut.assistance.production.models.entities.StudentSheetAssistance;
 
 import java.util.List;
@@ -8,6 +9,8 @@ import java.util.List;
 public interface StudentSheetAssistanceService {
 
     public StudentSheetAssistance findById(Long id);
+
+    public List<StudentSheetAssistance> findByStudent(Student student);
 
     public List<StudentSheetAssistance> findByAssistanceSheet(AssistanceSheet assistanceSheet);
 

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +41,6 @@ public class AssistanceSheetFacade {
         dto.setStudents(studentAssistance);
         return dto;
     }
-
 
     public List<AssistanceSheetDto> viewAssistanceSheetByTeacher(String identifierNumber) {
         return mapper.assitanceSheetToDto(assistanceSheetService.findByTeacher(teacherService.findByUser(userService.findByIdentifierNumber(identifierNumber))));

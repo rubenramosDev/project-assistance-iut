@@ -19,7 +19,7 @@ public class ValidationUserController {
 
     @ApiOperation(value = "Active a recent created account",
             notes = "No application role required",
-            response = String.class)
+            response = ApiGenericResponse.class)
     @GetMapping("/active/{token}")
     public ResponseEntity<ApiGenericResponse> validateToken(@PathVariable String token){
         facade.validateToken(token);

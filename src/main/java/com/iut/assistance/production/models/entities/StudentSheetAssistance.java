@@ -15,13 +15,13 @@ public class StudentSheetAssistance {
     private Date date;
 
     //Relations
-    @ManyToOne @JoinColumn(name = "assistance_sheet_id")
+    @ManyToOne(fetch = FetchType.EAGER) @JoinColumn(name = "assistance_sheet_id")
     private AssistanceSheet assistanceSheet;
 
-    @ManyToOne @JoinColumn(name = "status_assistance_sheet_id")
+    @ManyToOne(fetch = FetchType.EAGER) @JoinColumn(name = "status_assistance_sheet_id")
     private StatusSheetStudent statusSheetStudent;
 
-    @ManyToOne @JoinColumn(name = "student_id")
+    @ManyToOne(fetch = FetchType.EAGER) @JoinColumn(name = "student_id")
     private Student student;
     //End relations
 
