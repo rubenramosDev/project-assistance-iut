@@ -28,6 +28,7 @@ public class TeacherFacade {
     public String updateMyInfo(UserUpdateDto userUpdateDto){
         User user = userService.findByIdentifierNumber(userUpdateDto.getIdentifierNumber());
         user.setPassword(bCryptPasswordEncoder.encode(userUpdateDto.getPassword()));
+        userService.save(user);
         return "ok";
     }
 
