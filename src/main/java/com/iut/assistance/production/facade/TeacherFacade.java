@@ -9,6 +9,7 @@ import com.iut.assistance.production.models.entities.User;
 import com.iut.assistance.production.services.TeacherService;
 import com.iut.assistance.production.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,20 +17,18 @@ public class TeacherFacade {
 
     @Autowired private TeacherService teacherService;
     @Autowired private UserService userService;
+    @Autowired private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserUpdateDto seeMyInfo(String identifierNumber){
         User user = userService.findByIdentifierNumber(identifierNumber);
         return new UserUpdateDto(user.getIdentifierNumber(), user.getEmail(),
-                user.getName(), user.getLastName());
+                user.getName(), user.getLastName(),"");
     }
 
-    public UserUpdateDto updateMyInfo(UserUpdateDto userUpdateDto){
+    public String updateMyInfo(UserUpdateDto userUpdateDto){
         User user = userService.findByIdentifierNumber(userUpdateDto.getIdentifierNumber());
-        user.setName(userUpdateDto.getName());
-        user.setLastName(userUpdateDto.getLastName());
-        User userUpdated = userService.save(user);
-        return new UserUpdateDto(userUpdated.getIdentifierNumber(), userUpdated.getEmail(),
-                userUpdated.getName(), userUpdated.getLastName());
+        user.setPassword(bCryptPasswordEncoder.encode(userUpdateDto.getPassword()));
+        return "ok";
     }
 
     public Teacher createTeacher(UserDto dto) {

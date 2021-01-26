@@ -12,6 +12,8 @@ import com.iut.assistance.production.services.StudentService;
 import com.iut.assistance.production.services.StudentSheetAssistanceService;
 import com.iut.assistance.production.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,11 +25,12 @@ public class StudentFacade {
     @Autowired private UserService userService;
     @Autowired private StudentService studentService;
     @Autowired private StudentSheetAssistanceService studentSheetAssistanceService;
+    @Autowired private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public UserUpdateDto seeMyInfo(String identifierNumber){
         Student student = userService.findByIdentifierNumber(identifierNumber).getStudent();
         return new UserUpdateDto(student.getUser().getIdentifierNumber(), student.getUser().getEmail(),
-                student.getUser().getName(), student.getUser().getLastName());
+                student.getUser().getName(), student.getUser().getLastName(),"");
     }
 
     public List<AssistanceSheetDtoStudent> viewAssistanceSheetByStudent(String identifierNumber){
@@ -48,13 +51,11 @@ public class StudentFacade {
                 sheet.getStatusSheetStudent().getCode())).collect(Collectors.toList());
     }
 
-    public UserUpdateDto updateMyInfo(UserUpdateDto userUpdateDto){
+    public String updateMyInfo(UserUpdateDto userUpdateDto){
         User user = userService.findByIdentifierNumber(userUpdateDto.getIdentifierNumber());
-        user.setName(userUpdateDto.getName());
-        user.setLastName(userUpdateDto.getLastName());
-        User userUpdated = userService.save(user);
-        return new UserUpdateDto(userUpdated.getIdentifierNumber(), userUpdated.getEmail(),
-                userUpdated.getName(), userUpdated.getLastName());
+        user.setPassword(bCryptPasswordEncoder.encode(userUpdateDto.getPassword()));
+        userService.save(user);
+        return "ok";
     }
 
     public Student createStudent(UserDto dto) {

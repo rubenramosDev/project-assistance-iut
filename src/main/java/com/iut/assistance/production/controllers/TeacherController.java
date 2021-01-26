@@ -36,7 +36,7 @@ public class TeacherController {
             response = UserUpdateDto.class)
     @PreAuthorize("hasAuthority('ROL_TEACHER')")
     @PutMapping("/update")
-    public ResponseEntity<UserUpdateDto> updateMyInfo(@Valid @RequestBody UserUpdateDto userUpdateDto){
+    public ResponseEntity updateMyInfo(@Valid @RequestBody UserUpdateDto userUpdateDto){
         return ResponseEntity.ok(facade.updateMyInfo(userUpdateDto));
     }
 

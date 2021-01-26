@@ -47,7 +47,7 @@ public class StudentController {
             response = UserUpdateDto.class)
     @PreAuthorize("hasAuthority('ROL_STUDENT')")
     @PutMapping("/update")
-    public ResponseEntity<UserUpdateDto> updateMyInfo(@Valid @RequestBody UserUpdateDto userUpdateDto){
+    public ResponseEntity updateMyInfo(@Valid @RequestBody UserUpdateDto userUpdateDto){
         return ResponseEntity.ok(facade.updateMyInfo(userUpdateDto));
     }
 
